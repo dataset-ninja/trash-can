@@ -4,4 +4,6 @@ The dataset consists of 14424 images with 60801 labeled objects belonging to 22 
 
 Images in the TrashCan 1.0 dataset have pixel-level instance segmentation and bounding box annotations. Due to the nature of the instance segmentation task, it can be automatically transformed into a semantic segmentation task (only one mask for every class). There are 129 (1% of the total) unlabeled images (i.e. without annotations). There are 4 splits in the dataset: *instance train* (6065 images), *materials train* (6008 images), *materials val* (1204 images), and *instance val* (1147 images). Additionally, every image marked with its ***video id*** tag. The dataset was released in 2020 by the University of Minnesota Twin Cities, USA.
 
-<img src="https://github.com/dataset-ninja/trash-can/raw/main/visualizations/poster.png">
+Here are the visualized examples for the classes:
+
+[Dataset classes](https://github.com/dataset-ninja/trash-can/raw/main/visualizations/classes_preview.webm)
