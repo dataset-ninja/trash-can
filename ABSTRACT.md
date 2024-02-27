@@ -20,9 +20,9 @@ After the video selection process, frames were extracted from each video at a ra
 
 To prepare the dataset for deep network training, it underwent conversion from a proprietary JSON format to the COCO format. This conversion entailed transforming bitmap masks into COCO annotations represented by polygon vertices and mapping Supervisely annotations' classes and tags to COCO object classes. The authors then derived two dataset versions: TrashCan-Material and TrashCan-Instance, named after the tag data used to distinguish various types of trash. In the Material version, each trash object was assigned a class name following the convention trash_material_name (e.g., trash_paper, trash_plastic), provided the material had more than 50 instances in the dataset. Objects with fewer examples were categorized under the class trash_etc, analogous to annotators' classification when the material was unidentified. Similarly, in the TrashCan-Instance version, trash classes were generated based on instance tags approximating the object type being annotated (e.g., trash_cup, trash_bag). The same threshold of 50 instances was applied, with the generic class being trash_unknown_instance for less represented types. In both versions, any object labeled as unknown was typically included in the general trash class. The ROV class remained consistent across both versions, while bio objects were categorized as either plant or animal_animal_type (e.g., animal_starfish, animal_crab), based on applied tags.
 
-Solarized dark             |  Solarized Ocean
+TrashCan-Material             |  TrashCan-Instance
 :-------------------------:|:-------------------------:
-![](https://...Dark.png)  |  ![](https://...Ocean.png)
+![](https://github.com/dataset-ninja/trash-can/assets/120389559/da6e8e06-2514-481a-8c49-8ccde2bcad98)  |  ![](https://github.com/dataset-ninja/trash-can/assets/120389559/161b5530-f426-4cc2-a5b9-d374b3e7eea5)
 
 
 
