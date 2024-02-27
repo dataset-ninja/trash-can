@@ -13,57 +13,100 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = None
-PROJECT_NAME_FULL: str = None
+PROJECT_NAME: str = "TrashCan 1.0"
+PROJECT_NAME_FULL: str = (
+    "TrashCan 1.0: An Instance-Segmentation Labeled Dataset of Trash Observations"
+)
 HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = None
-APPLICATIONS: List[Union[Industry, Domain, Research]] = None
-CATEGORY: Category = None
+LICENSE: License = License.Custom(
+    source_url="https://conservancy.umn.edu/bitstream/handle/11299/214865/LICENSE.txt?sequence=2&isAllowed=y"
+)
+APPLICATIONS: List[Union[Industry, Domain, Research]] = [
+    Industry.WasteRecycling(),
+    Industry.Marine(),
+    Industry.Robotics(),
+]
+CATEGORY: Category = Category.Environmental(extra=Category.Robotics())
 
-CV_TASKS: List[CVTask] = None
-ANNOTATION_TYPES: List[AnnotationType] = None
+CV_TASKS: List[CVTask] = [
+    CVTask.InstanceSegmentation(),
+    CVTask.SemanticSegmentation(),
+    CVTask.ObjectDetection(),
+]
+ANNOTATION_TYPES: List[AnnotationType] = [
+    AnnotationType.InstanceSegmentation(),
+    AnnotationType.ObjectDetection(),
+]
 
-RELEASE_DATE: Optional[str] = None  # e.g. "YYYY-MM-DD"
+RELEASE_DATE: Optional[str] = "2020-07-23"  # e.g. "YYYY-MM-DD"
 if RELEASE_DATE is None:
     RELEASE_YEAR: int = None
 
-HOMEPAGE_URL: str = None
+HOMEPAGE_URL: str = "https://conservancy.umn.edu/handle/11299/214865"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = None
+PREVIEW_IMAGE_ID: int = 14351260
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
-GITHUB_URL: str = None
+GITHUB_URL: str = "https://github.com/dataset-ninja/trash-can"
 # URL to GitHub repo on dataset ninja (e.g. "https://github.com/dataset-ninja/some-dataset")
 
 ##################################
 ### * Optional after uploading ###
 ##################################
-DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = None
+DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = (
+    "https://conservancy.umn.edu/bitstream/handle/11299/214865/dataset.zip?sequence=12&isAllowed=y"
+)
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
-CLASS2COLOR: Optional[Dict[str, List[str]]] = None
+CLASS2COLOR: Optional[Dict[str, List[str]]] = {
+    "rov": [230, 25, 75],
+    "plant": [60, 180, 75],
+    "animal fish": [255, 225, 25],
+    "animal starfish": [0, 130, 200],
+    "animal shells": [245, 130, 48],
+    "animal crab": [145, 30, 180],
+    "animal eel": [70, 240, 240],
+    "animal etc": [240, 50, 230],
+    "trash etc": [210, 245, 60],
+    "trash fabric": [250, 190, 212],
+    "trash fishing gear": [0, 128, 128],
+    "trash metal": [220, 190, 255],
+    "trash paper": [170, 110, 40],
+    "trash plastic": [255, 250, 200],
+    "trash rubber": [128, 0, 0],
+    "trash wood": [170, 255, 195],
+    "trash unknown instance": [128, 128, 0],
+    "trash branch": [255, 215, 180],
+    "trash wreckage": [0, 0, 128],
+    "trash tarp": [200, 54, 128],
+    "trash rope": [40, 200, 0],
+    "trash net": [235, 155, 40],
+}
+
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 # If you have more than the one paper, put the most relatable link as the first element of the list
 # Use dict key to specify name for a button
-PAPER: Optional[Union[str, List[str], Dict[str, str]]] = None
+PAPER: Optional[Union[str, List[str], Dict[str, str]]] = "https://arxiv.org/pdf/2007.08097"
 BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
-REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {"GitHub":"some_link_to_repo_if_exists"}
+REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = None
 
 CITATION_URL: Optional[str] = None
-AUTHORS: Optional[List[str]] = None
-AUTHORS_CONTACTS: Optional[List[str]] = None
+AUTHORS: Optional[List[str]] = ["Hong Jungseok", "Fulton Michael", "Sattar Junaed"]
+AUTHORS_CONTACTS: Optional[List[str]] = ["jungseok@umn.edu", "fulto081@umn.edu", "junaed@umn.edu"]
 
-ORGANIZATION_NAME: Optional[Union[str, List[str]]] = None
-ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
+ORGANIZATION_NAME: Optional[Union[str, List[str]]] = "University of Minnesota Twin Cities, USA"
+ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://twin-cities.umn.edu/"
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
-SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = None
+SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
+    "__POSTTEXT__": "Additionally, every image marked with its ***video id*** tag"
+}
 TAGS: Optional[List[str]] = None
 
 
