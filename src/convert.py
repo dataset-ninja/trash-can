@@ -121,8 +121,9 @@ def convert_and_upload_supervisely_project(
                 if len(exterior) < 3:
                     continue
                 poligon = sly.Polygon(exterior)
-                label_poly = sly.Label(poligon, obj_class)
-                labels.append(label_poly)
+                if poligon.area > 30:
+                    label_poly = sly.Label(poligon, obj_class)
+                    labels.append(label_poly)
 
             bbox_coord = curr_ann_data[2]
             rectangle = sly.Rectangle(
