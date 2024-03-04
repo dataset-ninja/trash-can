@@ -17,7 +17,7 @@ PROJECT_NAME: str = "TrashCan 1.0"
 PROJECT_NAME_FULL: str = (
     "TrashCan 1.0: An Instance-Segmentation Labeled Dataset of Trash Observations"
 )
-HIDE_DATASET = True  # set False when 100% sure about repo quality
+HIDE_DATASET = False  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
