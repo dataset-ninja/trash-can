@@ -1,6 +1,6 @@
 Dataset **TrashCan 1.0** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://www.dropbox.com/scl/fi/y6f9ictxqvsyja5fa94ix/trashcan-10-DatasetNinja.tar?rlkey=yq02xpas8xvv22g740wsydg4c&dl=1)
+ [Download](https://assets.supervisely.com/remote/eyJsaW5rIjogImZzOi8vYXNzZXRzLzM1OTVfVHJhc2hDYW4gMS4wL3RyYXNoY2FuLTEwLURhdGFzZXROaW5qYS50YXIiLCAic2lnIjogIlBYTUhXQkNZb0w5aC8va2JnYmd2UFRRSTNOdXp4OVJOK2p0OUtpVXZtK1k9In0=)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
